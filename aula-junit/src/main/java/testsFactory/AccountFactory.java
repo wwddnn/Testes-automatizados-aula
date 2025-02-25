@@ -2,13 +2,19 @@ package testsFactory;
 
 import entities.Account;
 
-public class AccountFactory { //criar uma fabrica e dentro dela posso deixar varios objetos ja criados pra so usa-los na classe de teste
+// cria uma fabrica e dentro dela posso deixar varios objetos ja criados pra so usa-los na classe de teste
+public class AccountFactory {
 
-    public static Account createEmptAccount() { //importou a classe Account para deixar objetos Account ja criados //normalmente sao estaticos //cria conta com saldo zero
+    /* importa a classe Account para deixar os objetos Account ja criados.
+       normalmente esses metodos sao estaticos, porque nao precisa instanciar eles depois é so chamar a classe e o metodo dela.
+       nesse exemplo ciramos um construtor que cria a conta com saldo zero
+    */
+    public static Account createEmptAccount() {
         return new Account(1L, 0.0);
     }
 
-    public static Account createAccount(double initialBalance) { // cria conta mas o saldo é colocado na hora do teste, por isso initialBalance
+    // cria a conta, porem o saldo é colocado na hora do teste pelo parametro initialBalance
+    public static Account createAccount(double initialBalance) {
         return new Account(1L, initialBalance);
     }
 }
